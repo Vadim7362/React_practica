@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import Counter from "./components/Counter";
 import ClassCounter from "./components/ClassCounter";
-import "./components/styles/App.css";
+import "./styles/App.css";
 import PostItem from './components/PostItem';
 import PostList from './components/PostList'
+import MyButton from './components/UI/button/MyButton';
+import MyInput from './components/UI/input/MyInput';
 
 
 function App() {
@@ -18,9 +20,9 @@ function App() {
   return (
     <div className="App">
       <form>
-        <input type="text" placeholder="Название поста"/>
-        <input type="text" placeholder="Описание поста"/>
-        <button>Создать пост</button>
+        <MyInput type="text" placeholder="Название поста"/>
+        <MyInput type="text" placeholder="Описание поста"/>
+        <MyButton>Создать пост</MyButton>
       </form>
       <PostList posts={posts1} title="Посты про JS"/>
       
