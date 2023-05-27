@@ -3,7 +3,7 @@ import Posts from "../pages/Posts"
 import PostIdPage from "../pages/PostIdPage"
 
 export const routes = [
-  {path: '/about', component: About},
-  {path: '/posts', component: Posts},
-  {path: '/posts/:id', component: PostIdPage},
+  {path: '/about', element: About},
+  {path: '/posts', element: Posts},
+  {path: '/posts/:id', element: PostIdPage},
 ]
