@@ -1,16 +1,30 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import "../styles/App.css";
-import {routes} from "../router"
+import { privatRoutes, publicRoutes } from "../router"
 
 const AppRouter = () => {
-    <Routes>
-            {routes.map((route, index) => {
-                  <Route key = {index} path = {route.path} element={<route.Element />}/>
-            })
-            }
-            <Route path = "/*" element = {<Navigate to = "/posts" replace/>}/>
-        </Routes>
-        
+  const isAuth = true;
+  return(
+    isAuth 
+      ? <Routes>
+      {privatRoutes.map((route, index) => {
+        return(
+          <Route key = {index} path = {route.path} element={<route.element />}/>
+        )
+      })
+      }
+      </Routes>
+      : 
+        <Routes>
+          {publicRoutes.map((route, index) => {
+          return(
+            <Route key = {index} path = {route.path} element={<route.element />}/>
+          )
+          })
+          }
+  <Route path = "/*" element = {<Navigate to = "/posts" replace/>}/>
+</Routes>
+  )
 }
 
 export default AppRouter
